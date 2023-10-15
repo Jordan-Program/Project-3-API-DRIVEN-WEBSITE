@@ -1,0 +1,529 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&family=Roboto:wght@900&display=swap');
+
+/* css for default values. */
+*
+    {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Poppins',sans-serif;
+    }
+
+/* css for default values. */
+
+
+/* css for current weather image */
+.current_weather img 
+{
+    max-width: 120px;
+    margin-top: -15px;
+
+}
+/* css for current weather image */
+
+/* css for log out button */
+
+.btn_logout 
+{
+    --black: #000000;
+    --ch-black: #141414;
+    --eer-black: #1b1b1b;
+    --night-rider: #2e2e2e;
+    --white: #ffffff;
+    --af-white: #f3f3f3;
+    --ch-white: #e1e1e1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition-duration: .3s;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+    background-color: var(--night-rider);
+}
+  
+  /* plus sign */
+.sign 
+{
+    width: 100%;
+    transition-duration: .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+  .sign svg 
+{
+    width: 17px;
+}
+  
+  .sign svg path 
+{
+    fill: var(--af-white);
+}
+  /* text */
+.text 
+{
+    position: absolute;
+    right: 0%;
+    width: 0%;
+    opacity: 0;
+    color: var(--af-white);
+    font-size: 1.2em;
+    font-weight: 600;
+    transition-duration: .3s;
+}
+  /* hover effect on button width */
+.btn_logout:hover 
+{
+    width: 125px;
+    border-radius: 5px;
+    transition-duration: .3s;
+}
+  
+.btn_logout:hover .sign 
+{
+    width: 30%;
+    transition-duration: .3s;
+    padding-left: 20px;
+}
+  /* hover effect button's text */
+.btn_logout:hover .text 
+{
+    opacity: 1;
+    width: 70%;
+    transition-duration: .3s;
+    padding-right: 10px;
+}
+  /* button click effect*/
+.btn_logout:active 
+{
+    transform: translate(2px ,2px);
+}
+
+/* css for log out button */
+
+/* css for web background */
+@keyframes move-background
+{
+    0% 
+    {
+        background-position: 0 200px, 0 300px, 100px 250px;
+    }
+    100% 
+    {
+        background-position: 1000px 200px, 1200px 300px, 1100px 250px;
+    }
+    
+}
+    
+.background-container
+{
+    height: 100%;
+}
+      
+.stars 
+{
+    background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    
+}
+      
+.twinkling
+{
+    width:100%;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+        
+    -moz-animation:move-background 70s linear infinite;
+    -ms-animation:move-background 70s linear infinite;
+    -o-animation:move-background 70s linear infinite;
+    -webkit-animation:move-background 70s linear infinite;
+    animation:move-background 70s linear infinite;
+    
+    }
+      
+.clouds
+{
+    width:100%;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+    
+    -moz-animation:move-background 150s linear infinite;
+    -ms-animation:move-background 150s linear infinite;
+    -o-animation:move-background 150s linear infinite;
+    -webkit-animation:move-background 150s linear infinite;
+    animation:move-background 150s linear infinite;
+}
+
+#moon-background
+{
+    height: 40vh;
+    width:40vh;
+    position: absolute;
+    right: 20px;
+    margin-top: 20px;
+}
+
+/* css for web background */
+
+/* css for search location */
+.location-wrapper
+{
+    position: relative;
+    line-height: 14px;
+    margin: 0 10px;
+    display: inline-block;   
+}
+
+#location-label
+{
+    color: #000000;
+    font-size:1em;
+    text-transform:uppercase;
+    position:absolute;
+    z-index:2;
+    left:20px;
+    top:15px;
+    padding:0 2px;
+    background-color:#D9DCE3;
+    border-radius:8px;
+    transition:transform .2s ease;
+    text-align: center;
+}
+
+.location-input
+{
+    font-size:13px;
+    color: #000000;
+    background-color:#D9DCE3;
+    outline:none;
+    border:1px solid #4d4d4d;
+    padding:10px 20px;
+    border-radius:8px;
+    position: relative;
+
+    &:invalid + #location-label
+    {
+        transform:translateY(0);
+    }
+
+    &:focus
+    {
+        border-color: #4d4d4d;
+        & + #location-label
+        {
+            color: #000000;
+            transform: translateY(-20px);
+        }
+    }
+}
+/* css for search location */
+
+/* css for card body */
+.card-body
+    {
+        border-radius: 25px;
+        box-shadow:  -5px -5px 10px #414158,
+                      5px 5px 10px #ffffff;
+    }
+/* css for card body */
+
+/* css for search button */
+#btn_search 
+{
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 7px;
+    border: 1px solid rgb(255, 255, 255);
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background: transparent;
+    color: #fff;
+    overflow: hidden;
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: all 0.2s ease-in;
+    -moz-transition: all 0.2s ease-in;
+    transition: all 0.2s ease-in;
+    }
+    
+    #btn_search:hover 
+    {
+    box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.815);
+    -webkit-transition: all 0.2s ease-out;
+    -moz-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+    }
+    
+    #btn_search:hover::before {
+    -webkit-animation: sh02 0.5s 0s linear;
+    -moz-animation: sh02 0.5s 0s linear;
+    animation: sh02 0.5s 0s linear;
+    }
+    
+    #btn_search::before {
+    content: '';
+    display: block;
+    width: 0px;
+    height: 86%;
+    position: absolute;
+    top: 7%;
+    left: 0%;
+    opacity: 0;
+    background: #fff;
+    box-shadow: 0 0 50px 30px #fff;
+    -webkit-transform: skewX(-20deg);
+    -moz-transform: skewX(-20deg);
+    -ms-transform: skewX(-20deg);
+    -o-transform: skewX(-20deg);
+    transform: skewX(-20deg);
+    }
+    
+    @keyframes sh02 {
+    from {
+        opacity: 0;
+        left: 0%;
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    
+    to {
+        opacity: 0;
+        left: 100%;
+    }
+    }
+    
+    #btn_search:active 
+    {
+    box-shadow: 0 0 0 0 transparent;
+    -webkit-transition: box-shadow 0.2s ease-in;
+    -moz-transition: box-shadow 0.2s ease-in;
+    transition: box-shadow 0.2s ease-in;
+    }
+/* css for #btn_searchs */
+
+/* css for footer */
+.bottom_fixed
+{
+    position:absolute;
+    bottom:0;
+    padding: 0;
+    margin: 0;
+}
+/* css for footer */
+
+/* css for media */
+@media (max-width: 1000px)
+{
+    #moon-background
+    {
+    height: 30vh;
+    width: 30vh;
+    position: absolute;
+    right: 10px;
+    margin-top: 20px;
+    }
+
+    .background-container
+    {
+        height: 165vw;
+    }
+}
+
+
+@media (max-width: 600px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+
+
+    .background-container
+    {
+        height: 480vw;
+    }
+}
+
+@media (max-width: 428px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+
+
+    .background-container
+    {
+        height: 450vw;
+    }
+
+
+}
+
+@media (max-width: 414px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+
+
+    .background-container
+    {
+        height: 465vw;
+    }
+}
+
+
+@media (max-width: 390px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+
+
+    .background-container
+    {
+        height: 490vw;
+    }
+
+}
+
+@media (max-width: 384px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+
+
+    .background-container
+    {
+        height: 498vw;
+    }
+}
+
+@media (max-width: 375px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .btn_logout 
+    {
+        --black: #000000;
+        --ch-black: #141414;
+        --eer-black: #1b1b1b;
+        --night-rider: #2e2e2e;
+        --white: #ffffff;
+        --af-white: #f3f3f3;
+        --ch-white: #e1e1e1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 10vw;
+        height: 10vw;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition-duration: .3s;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+        background-color: var(--night-rider);
+    }
+
+    .background-container
+    {
+        height: 515vw;
+    }
+
+}
+
+@media (max-width: 360px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .btn_logout 
+    {
+        --black: #000000;
+        --ch-black: #141414;
+        --eer-black: #1b1b1b;
+        --night-rider: #2e2e2e;
+        --white: #ffffff;
+        --af-white: #f3f3f3;
+        --ch-white: #e1e1e1;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        width: 7vw;
+        height: 9vw;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+        transition-duration: .3s;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+        background-color: var(--night-rider);
+    }
+
+    .background-container
+    {
+        height: 540vw;
+    }
+}
+/* css for media */

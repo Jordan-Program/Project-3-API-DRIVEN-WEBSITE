@@ -1,0 +1,756 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500;800&family=Roboto:wght@900&display=swap');
+
+/* css for default values. */
+*
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+
+
+body
+{
+    
+    overflow-x: hidden;
+    min-height: 100vh;
+    position: relative;
+} 
+/* css for default values. */
+
+/* css for web background */
+@keyframes move-background
+{
+    0% 
+    {
+        background-position: 0 200px, 0 300px, 100px 250px;
+    }
+    100% 
+    {
+        background-position: 1000px 200px, 1200px 300px, 1100px 250px;
+    }
+    
+}
+    
+.background-container
+{
+    height: 100%;
+}
+      
+.stars 
+{
+    background: black url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/stars.png) repeat;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    
+}
+      
+.twinkling
+{
+    width:100%;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/twinkling.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+        
+    -moz-animation:move-background 70s linear infinite;
+    -ms-animation:move-background 70s linear infinite;
+    -o-animation:move-background 70s linear infinite;
+    -webkit-animation:move-background 70s linear infinite;
+    animation:move-background 70s linear infinite;
+    
+    }
+      
+.clouds
+{
+    width:100%;
+    height: 100%;
+    background: transparent url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/1231630/clouds_repeat.png") repeat;
+    background-size: 1000px 1000px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    
+    
+    -moz-animation:move-background 150s linear infinite;
+    -ms-animation:move-background 150s linear infinite;
+    -o-animation:move-background 150s linear infinite;
+    -webkit-animation:move-background 150s linear infinite;
+    animation:move-background 150s linear infinite;
+}
+
+#moon-background
+{
+    height: 40vh;
+    width:40vh;
+    position: absolute;
+    right: 20px;
+    margin-top: 20px;
+}
+
+/* css for web background */
+
+/* css for login textbox */
+.login_txtbox 
+{
+    position: relative;
+    width: 196px;
+}
+  
+.login_txtbox input 
+{
+    position: relative;
+    width: 100%;
+    padding: 20px 10px 10px;
+    background: transparent;
+    outline: none;
+    box-shadow: none;
+    border: none;
+    color: #23242a;
+    font-size: 1em;
+    letter-spacing: 0.05em;
+    transition: 0.5s;
+    z-index: 10;
+
+
+}
+  
+
+.login_txtbox span
+{
+    position: absolute;
+    left: 0;
+    padding: 20px 10px 10px;
+    font-size: 1em;
+    color: #8f8f8f;
+    letter-spacing: 00.05em;
+    transition: 0.5s;
+    pointer-events: none;
+}
+  
+.login_txtbox input:valid ~span,
+.login_txtbox input:focus ~span 
+{
+    color: #ffffff;
+    transform: translateX(-10px) translateY(-34px);
+    font-size: 0,75em;
+}
+  
+.login_txtbox i 
+{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 4px;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 9;
+}
+  
+.login_txtbox input:valid ~i,
+.login_txtbox input:focus ~i 
+{
+    height: 44px;
+}
+/* css for login textbox */
+
+/* css for login container */
+.login_container 
+{
+    border-radius: 30px;
+    background: #4b4453;
+    box-shadow: inset 5px -5px 5px #a78e8e,
+                inset -5px 5px 5px #F6F6F6;
+    
+    margin-top: 150px;
+    margin-left: 700px;
+    height: 70vh;
+    width: 60vh;
+}
+/* css for login container */
+
+/* css for login button */
+#btn_register 
+{
+    --bg: #000000;
+    --text-color: #fff;
+    position: relative;
+    width: 150px;
+    border: none;
+    background: var(--bg);
+    color: var(--text-color);
+    padding: 1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: 0.2s;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    box-shadow: #f8f8f8 0px 7px 2px, #000 0px 8px 5px;
+}
+  
+
+#btn_register:active 
+{
+    top: 4px;
+    box-shadow: #ffffff 0px 3px 2px,#000 0px 3px 5px;
+}
+/* css for login button */
+
+/* css for show password */
+.checkbox-wrapper-10 .tgl 
+{
+    display: none;
+}
+  
+.checkbox-wrapper-10 .tgl,
+.checkbox-wrapper-10 .tgl:after,
+.checkbox-wrapper-10 .tgl:before,
+.checkbox-wrapper-10 .tgl *,
+.checkbox-wrapper-10 .tgl *:after,
+.checkbox-wrapper-10 .tgl *:before,
+.checkbox-wrapper-10 .tgl + .tgl-btn 
+{
+    box-sizing: border-box;
+}
+  
+.checkbox-wrapper-10 .tgl::-moz-selection,
+.checkbox-wrapper-10 .tgl:after::-moz-selection,
+.checkbox-wrapper-10 .tgl:before::-moz-selection,
+.checkbox-wrapper-10 .tgl *::-moz-selection,
+.checkbox-wrapper-10 .tgl *:after::-moz-selection,
+.checkbox-wrapper-10 .tgl *:before::-moz-selection,
+.checkbox-wrapper-10 .tgl + .tgl-btn::-moz-selection,
+.checkbox-wrapper-10 .tgl::selection,
+.checkbox-wrapper-10 .tgl:after::selection,
+.checkbox-wrapper-10 .tgl:before::selection,
+.checkbox-wrapper-10 .tgl *::selection,
+.checkbox-wrapper-10 .tgl *:after::selection,
+.checkbox-wrapper-10 .tgl *:before::selection,
+.checkbox-wrapper-10 .tgl + .tgl-btn::selection 
+{
+    background: none;
+}
+  
+.checkbox-wrapper-10 .tgl + .tgl-btn 
+{
+    outline: 0;
+    display: block;
+    width: 8em;
+    height: 2em;
+    position: relative;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+  
+.checkbox-wrapper-10 .tgl + .tgl-btn:after,
+.checkbox-wrapper-10 .tgl + .tgl-btn:before 
+{
+    position: relative;
+    display: block;
+    content: "";
+    width: 50%;
+    height: 100%;
+}
+  
+.checkbox-wrapper-10 .tgl + .tgl-btn:after 
+{
+    left: 0;
+}
+  
+.checkbox-wrapper-10 .tgl + .tgl-btn:before 
+{
+    display: none;
+}
+  
+.checkbox-wrapper-10 .tgl:checked + .tgl-btn:after 
+{
+    left: 50%;
+}
+  
+.checkbox-wrapper-10 .tgl-flip + .tgl-btn 
+{
+    padding: 2px;
+    transition: all 0.2s ease;
+    font-family: sans-serif;
+    perspective: 100px;
+}
+  
+.checkbox-wrapper-10 .tgl-flip + .tgl-btn:after,
+.checkbox-wrapper-10 .tgl-flip + .tgl-btn:before 
+{
+    display: inline-block;
+    transition: all 0.4s ease;
+    width: 100%;
+    text-align: center;
+    position: absolute;
+    line-height: 2em;
+    font-weight: bold;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-radius: 4px;
+}
+  
+.checkbox-wrapper-10 .tgl-flip + .tgl-btn:after 
+{
+    content: attr(data-tg-on);
+    background: #02C66F;
+    transform: rotateY(-180deg);
+}
+  
+.checkbox-wrapper-10 .tgl-flip + .tgl-btn:before 
+{
+    background: #FF3A19;
+    content: attr(data-tg-off);
+}
+  
+.checkbox-wrapper-10 .tgl-flip + .tgl-btn:active:before 
+{
+    transform: rotateY(-20deg);
+}
+  
+.checkbox-wrapper-10 .tgl-flip:checked + .tgl-btn:before 
+{
+    transform: rotateY(180deg);
+}
+  
+.checkbox-wrapper-10 .tgl-flip:checked + .tgl-btn:after 
+{
+    transform: rotateY(0);
+    left: 0;
+    background: #02C66F;
+}
+  
+.checkbox-wrapper-10 .tgl-flip:checked + .tgl-btn:active:after 
+{
+    transform: rotateY(20deg);
+}
+/* css for show password */
+
+/* css for media */
+@media (max-width: 1440px)
+{
+    #moon-background
+    {
+        height: 20vh;
+        width: 20vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .login_container 
+    {
+    border-radius: 30px;
+    background: #4b4453;
+    box-shadow: inset 5px -5px 5px #a78e8e,
+                inset -5px 5px 5px #F6F6F6;
+    
+    margin-top: 200px;            
+    margin-left: 350px;
+    height: 70vh;
+    width: 70vh;
+    }
+
+
+    .background-container
+    {
+        height: 65vw;
+    }
+}
+
+
+@media (max-width: 1000px)
+{
+    #moon-background
+    {
+    height: 30vh;
+    width: 30vh;
+    position: absolute;
+    right: 10px;
+    margin-top: 20px;
+    }
+
+    .background-container
+    {
+        height: 165vw;
+    }
+}
+
+@media (max-width: 810px)
+{
+    #moon-background
+    {
+        height: 20vh;
+        width: 20vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .login_container 
+    {
+    border-radius: 30px;
+        background: #4b4453;
+        box-shadow: inset 5px -5px 5px #a78e8e,
+                    inset -5px 5px 5px #F6F6F6;
+
+        margin-top: 300px;            
+        margin-left: 15px;
+        height: 50vh;
+        width: 70vh;
+    }
+
+
+    .background-container
+    {
+        height: 134vw;
+    }
+}
+
+@media (max-width: 768px)
+{
+    #moon-background
+    {
+        height: 20vh;
+        width: 20vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .login_container 
+    {
+    border-radius: 30px;
+        background: #4b4453;
+        box-shadow: inset 5px -5px 5px #a78e8e,
+                    inset -5px 5px 5px #F6F6F6;
+
+        margin-top: 300px;            
+        margin-left: 15px;
+        height: 55vh;
+        width: 70vh;
+    }
+
+
+    .background-container
+    {
+        height: 134vw;
+    }
+}
+
+
+@media (max-width: 600px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+
+
+    .background-container
+    {
+        height: 480vw;
+    }
+}
+
+@media (max-width: 428px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .login_container 
+    {
+    border-radius: 30px;
+    background: #4b4453;
+    box-shadow: inset 5px -5px 5px #a78e8e,
+                inset -5px 5px 5px #F6F6F6;
+    
+    margin-top: 200px;            
+    margin-left: 15px;
+    height: 63vh;
+    width: 40vh;
+    }
+
+
+    .background-container
+    {
+        height: 217vw;
+    }
+}
+
+@media (max-width: 414px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .container_show_password 
+    {
+        --color: #a5a5b0;
+        --size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        font-size: var(--size);
+        user-select: none;
+        fill: var(--color);
+        padding-left: 248px;
+    }
+
+    .login_container 
+    {
+        border-radius: 30px;
+        background: #4b4453;
+        box-shadow: inset 5px -5px 5px #a78e8e,
+                    inset -5px 5px 5px #F6F6F6;
+
+        margin-top: 200px;            
+        margin-left: 15px;
+        height: 65vh;
+        width: 40vh;
+    }
+
+
+    .background-container
+    {
+        height: 217vw;
+    }
+}
+
+
+@media (max-width: 412px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .login_container 
+    {
+        border-radius: 30px;
+        background: #4b4453;
+        box-shadow: inset 5px -5px 5px #a78e8e,
+                    inset -5px 5px 5px #F6F6F6;
+
+        margin-top: 200px;            
+        margin-left: 15px;
+        height: 63vh;
+        width: 40vh;
+    }
+
+
+    .background-container
+    {
+        height: 222vw;
+    }
+}
+
+
+
+@media (max-width: 390px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .container_show_password 
+    {
+        --color: #a5a5b0;
+        --size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        font-size: var(--size);
+        user-select: none;
+        fill: var(--color);
+        padding-left: 238px;
+    }
+
+    .login_container 
+    {
+        border-radius: 30px;
+        background: #4b4453;
+        box-shadow: inset 5px -5px 5px #a78e8e,
+                    inset -5px 5px 5px #F6F6F6;
+        
+        margin-top: 200px;            
+        margin-left: 15px;
+        height: 70vh;
+        width: 40vh;
+    }
+
+    .background-container
+    {
+        height: 222vw;
+    }
+
+}
+
+@media (max-width: 384px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .login_container 
+    {
+        border-radius: 30px;
+        background: #4b4453;
+        box-shadow: inset 5px -5px 5px #a78e8e,
+                    inset -5px 5px 5px #F6F6F6;
+        
+        margin-top: 190px;            
+        margin-left: 15px;
+        height: 68vh;
+        width: 38vh;
+    }
+
+    .background-container
+    {
+        height: 228vw;
+    }
+}
+
+@media (max-width: 375px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .container_show_password 
+    {
+        --color: #a5a5b0;
+        --size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        font-size: var(--size);
+        user-select: none;
+        fill: var(--color);
+        padding-left: 230px;
+    }
+
+    .login_container 
+    {
+        border-radius: 30px;
+        background: #4b4453;
+        box-shadow: inset 5px -5px 5px #a78e8e,
+                    inset -5px 5px 5px #F6F6F6;
+        
+        margin-top: 190px;            
+        margin-left: 15px;
+        height: 73vh;
+        width: 40vh;
+    }
+
+
+    .background-container
+    {
+        height: 233vw;
+    }
+
+}
+
+@media (max-width: 360px)
+{
+    #moon-background
+    {
+        height: 13vh;
+        width: 13vh;
+        position: absolute;
+        right: 10px;
+    }
+    
+    .container_show_password 
+    {
+        --color: #a5a5b0;
+        --size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        cursor: pointer;
+        font-size: var(--size);
+        user-select: none;
+        fill: var(--color);
+        padding-left: 215px;
+    }
+
+    .login_container 
+    {
+        border-radius: 30px;
+        background: #4b4453;
+        box-shadow: inset 5px -5px 5px #a78e8e,
+                    inset -5px 5px 5px #F6F6F6;
+        
+        margin-top: 180px;            
+        margin-left: 15px;
+        height: 78vh;
+        width: 38vh;
+    }
+
+
+    .background-container
+    {
+        height: 245vw;
+    }
+}
+/* css for media */
