@@ -1,7 +1,3 @@
-import {config} from 'dotenv';
-config();
-
-
 
 // Declaration and Initialization of Variables
 let city_input = document.querySelector("#txt_search_location");
@@ -9,7 +5,7 @@ let search_button = document.querySelector("#btn_search");
 let current_weather_div = document.querySelector(".current_weather");
 let days_forecast_div = document.querySelector(".days_forecast");
 
-const API_KEY = process.env.WEATHER_API_KEY;
+const API_KEY = "f17bd451d0a1c79f8e2d2f952a8928c0";
 
 // create weather card HTML based on weather data
 const createWeatherCard = (cityName, weatherItem, index) => 
