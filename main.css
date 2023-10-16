@@ -356,6 +356,23 @@
     }
 }
 
+@media (max-width: 810px)
+{
+    #moon-background
+    {
+    height: 30vh;
+    width: 30vh;
+    position: absolute;
+    right: 10px;
+    margin-top: 20px;
+    }
+
+    .background-container
+    {
+        height: 200vw;
+    }
+}
+
 
 @media (max-width: 600px)
 {
@@ -387,7 +404,7 @@
 
     .background-container
     {
-        height: 450vw;
+        height: 550vw;
     }
 
 
@@ -406,7 +423,7 @@
 
     .background-container
     {
-        height: 465vw;
+        height: 570vw;
     }
 }
 
@@ -424,7 +441,7 @@
 
     .background-container
     {
-        height: 490vw;
+        height: 600vw;
     }
 
 }
@@ -442,7 +459,7 @@
 
     .background-container
     {
-        height: 498vw;
+        height: 620vw;
     }
 }
 
@@ -482,7 +499,7 @@
 
     .background-container
     {
-        height: 515vw;
+        height: 620vw;
     }
 
 }
@@ -523,7 +540,7 @@
 
     .background-container
     {
-        height: 540vw;
+        height: 650vw;
     }
 }
 /* css for media */
