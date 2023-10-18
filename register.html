@@ -79,7 +79,7 @@
                                 </div>
                             </div>
                             <p class="pt-5 text-white">Already have an account? <a href="index.html" class=" link-body-emphasis link-offset-2 link-offset-3-hover link-underline link-underline-opacity-0 link-underline-opacity-75-hover">Sign In.</a></p>
-                            <input class="invisible" id="accountId" type="text">
+                            <input class="invisible" id="accountId" type="number">
                         </div>
                     </div>
                 </div>
@@ -223,7 +223,7 @@
         <script type="module">
            // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-            import { getFirestore, doc, getDocs, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, onSnapshot, orderBy, query, Timestamp, where} from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js';
+            import { getFirestore, doc, getDocs, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField, onSnapshot, orderBy, query, Timestamp, where, limit} from 'https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js';
             // TODO: Add SDKs for Firebase products that you want to use
             // https://firebase.google.com/docs/web/setup#available-libraries
         
@@ -248,41 +248,33 @@
             // Initialize Cloud Firestore and get a reference to the service
             const db = getFirestore(app);
            
-
+            
             // function for custom id
-            const last_account_id = collection(db, "weatherapp");
-            getDocs(last_account_id)
-            .then((querySnapshot) => 
+            let account_id;
+            const collectionRef = collection(db, "weatherapp");
+            const queryRef = query(collectionRef, orderBy("id","desc"), limit(1));
+
+            onSnapshot(queryRef, (snapshot) => 
             {
-                // Initialize a variable to store the last document data
-                let last_accnt_id = null;
+              let last_accnt_id = null;
 
-                querySnapshot.forEach((weatherapp) => 
-                {
-                    // Store the data of the current document
-                    last_accnt_id = weatherapp.data();
-                });
+              snapshot.forEach((doc) => 
+              {
+                last_accnt_id = doc.data();
+              });
 
-                if (last_accnt_id) 
-                {
-                // Increment the "id" field by 1
-                last_accnt_id.id++;
-
-                // If there's a last document, create the HTML element for it
+              if (last_accnt_id) 
+              {
+                last_accnt_id.id = Number(last_accnt_id.id) + 1;
+                
                 const uniqueId = last_accnt_id.id;
-        
-                
-                
+                account_id = uniqueId;
 
-                // Set the HTML element with the last document's data
                 document.querySelector("#accountId").value = uniqueId;
-                 
-                }
-            })
-            .catch((error) => 
-            {
-                console.error("Error getting documents: ", error);
+              }
             });
+            // function for custom id
+
             
             
 
@@ -341,10 +333,10 @@
                 {   
                     await setDoc(doc(db, "weatherapp", accountId.value), 
                     {   
-                        id: document.querySelector("#accountId").value,
+                        id: account_id,
                         username: document.querySelector("#login_username").value,
                         password: document.querySelector("#login_password").value,
-                        timestamp: Timestamp.fromDate(new Date())
+                        accountmade: Timestamp.fromDate(new Date())
     
                     });
 
